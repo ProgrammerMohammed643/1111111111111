@@ -20,8 +20,8 @@ async def process_file(document, update):
     file = await document.get_file()  # الحصول على الكائن File من الوثيقة
     file_path = os.path.join(os.getcwd(), 'uploaded_file.py')  # حفظ الملف في المسار الحالي
     
-    await file.download_to_drive(file_path)  # تنزيل الملف
-    
+    # تنزيل الملف
+    await file.download_to_drive(file_path)  
     await update.message.reply_text("تم تحميل الملف بنجاح!")
     
     # رفع الملف إلى Render وتشغيله
